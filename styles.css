@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', Courier, sans-serif;
     font-size: 25px;
     font-weight: bold;
 }
@@ -37,7 +37,7 @@ button {
 button:hover {
     background-color: #D90429;
     color: white;
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 

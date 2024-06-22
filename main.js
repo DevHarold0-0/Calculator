@@ -82,15 +82,24 @@ function populateDisplay() {
 
     operators.forEach(symbol => {
         symbol.addEventListener('click', (event) => {
-           if (num1 !== '') {
-            operator = event.target.textContent;
-           }
-           if (num1 !== '' && num2 !== '') {
-            display.textContent = '';
-            operator = event.target.textContent;
-            calculate();
-            display.textContent = num1
-           }
+
+            event.target.style.backgroundColor = 'blue';
+
+
+            if (num1 !== '' && num2 !== '') {
+                display.textContent = '';
+                event.target = operator;
+                calculate();
+                display.textContent = num1;
+                operator = event.target.textContent;
+            }
+            
+            else if (num1 !== '') {
+                operator = event.target.textContent;
+            }
+
+
+           
         })
     })
 
