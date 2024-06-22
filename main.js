@@ -7,6 +7,8 @@ const solution = document.querySelector('#answer');
 
 const clear = document.querySelector('#erase')
 
+const point = document.querySelector('#decimal')
+
 let operator = '';
 let num1 = '';
 let num2 = '';
@@ -47,7 +49,6 @@ function calculate() {
         num1 = result;
         num2 = '';
         return num1;
-
     }
 }
 
@@ -77,13 +78,9 @@ function populateDisplay() {
    });
 
 
-    
-
-
     operators.forEach(symbol => {
         symbol.addEventListener('click', (event) => {
 
-            event.target.style.backgroundColor = 'blue';
 
 
             if (num1 !== '' && num2 !== '') {
@@ -106,11 +103,15 @@ function populateDisplay() {
 
 
     solution.addEventListener('click', (event) => {
-        if (num1 !== '' && num2 !== '' && operator !== '') {
+        if (num1 === '0' || num2 === '0' && operator === '÷') {
+            display.textContent = '(｢•-•)｢ ʷʱʸ?';
+        }
+
+        else if (num1 !== '' && num2 !== '' && operator !== '') {
             display.textContent = '';
-            event.target.textContent
+            event.target.textContent;
             calculate();
-            display.textContent = num1
+            display.textContent = num1;
         }
     })
 

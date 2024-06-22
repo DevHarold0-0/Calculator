@@ -16,8 +16,8 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 400px;
-    padding: 100px 20vw;
-    background-color: white;
+    padding: 80px 20vw;
+    background-color: #07071D;
 }
 
 button {
@@ -58,9 +58,15 @@ button:hover {
     background: #fb8500;
     padding: 20px;
     margin: 20px;
-    /* font-size: 2vw; */
     border-radius: 15px;
+    width: 385px;
 }
+
+#digits {
+    overflow: hidden;
+}
+
+
 
 
 .operators {
