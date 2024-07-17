@@ -104,7 +104,7 @@ function populateDisplay() {
 
     solution.addEventListener('click', (event) => {
         if (num1 === '0' || num2 === '0' && operator === '÷') {
-            display.textContent = '(｢•-•)｢ ʷʱʸ?';
+            display.textContent = '(｢•-•)｢';
         }
 
         else if (num1 !== '' && num2 !== '' && operator !== '') {
