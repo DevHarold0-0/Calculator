@@ -60,7 +60,7 @@ button:hover {
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
-    width: 385px;
+    width: auto;
 }
 
 #digits {
