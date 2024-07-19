@@ -8,9 +8,10 @@ const solution = document.querySelector('#answer');
 
 const clear = document.querySelector('#erase');
 
-const point = document.querySelector('#decimal');
+const decimal = document.querySelector('#dot');
 
 const negatives = document.querySelector('#negative');
+
 
 
 
@@ -114,8 +115,6 @@ function populateDisplay() {
     })
 
 
-
-
     clear.addEventListener('click', (event) => {
         display.textContent = '0';
         event.target.textContent;
@@ -123,9 +122,6 @@ function populateDisplay() {
         num2 = '';
         operator = '';
     })
-
-
-
 
 
     negatives.addEventListener('click', (event) => {
@@ -147,6 +143,20 @@ function populateDisplay() {
             display.textContent = num2;
         }
     })
+
+
+    decimal.addEventListener('click', (event) => {
+        if (num1 !== "" && !num1.includes(".") && num2 == "") {
+            num1 = num1 + ".";
+            display.textContent = num1;
+        }
+
+        if (num2 !== "" && !num2.includes(".")) {
+            num2 = num2 + ".";
+            display.textContent = num2;
+        }
+    })
+
 
 }
 
