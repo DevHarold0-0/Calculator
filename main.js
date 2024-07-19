@@ -125,7 +125,12 @@ function populateDisplay() {
 
 
     negatives.addEventListener('click', (event) => {
-        if (num1 !== "" && !num1.includes("-") && num2 == "") {
+        //negative 0 edge case.
+        if (num1 == "") {
+            num1 = num1 + "-0";
+            display.textContent = num1;
+        }
+        else if (num1 !== "" && !num1.includes("-") && num2 == "") {
             num1 = "-" + num1;
             display.textContent = num1;
         }
@@ -133,6 +138,8 @@ function populateDisplay() {
             num1 = num1.replace("-", "");
             display.textContent = num1;
         }
+
+
 
         if (num2 !== "" && !num2.includes("-")) {
             num2 = "-" + num2;
@@ -146,10 +153,18 @@ function populateDisplay() {
 
 
     decimal.addEventListener('click', (event) => {
-        if (num1 !== "" && !num1.includes(".") && num2 == "") {
+        //0 decimal edge case.
+        if (num1 == "") {
+            num1 = num1 + "0.";
+            display.textContent = num1;
+        }
+        else if (num1 !== "" && !num1.includes(".") && num2 == "") {
             num1 = num1 + ".";
             display.textContent = num1;
         }
+
+
+
 
         if (num2 !== "" && !num2.includes(".")) {
             num2 = num2 + ".";
