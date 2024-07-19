@@ -29,14 +29,14 @@ let result;
 function calculate() {
     if (operator === '+') {
         result = Number(num1) + Number(num2);
-        num1 = result;
+        num1 = result.toString();
         num2 = '';
         return num1;
     }
 
     if (operator === '-') {
         result = Number(num1) - Number(num2);
-        num1 = result;
+        num1 = result.toString();
         num2 = '';
         return num1;
 
@@ -44,15 +44,14 @@ function calculate() {
 
     if (operator === '*') {
         result = Number(num1) * Number(num2);
-        num1 = result;
+        num1 = result.toString();
         num2 = '';
         return num1;
-
     }
 
     if (operator === '÷') {
         result = Number(num1) / Number(num2);
-        num1 = result;
+        num1 = result.toString();
         num2 = '';
         return num1;
     }
