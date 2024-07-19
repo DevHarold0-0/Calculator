@@ -1,13 +1,18 @@
 const numbers = document.querySelectorAll('.number');
+
 const display = document.querySelector('#digits');
 
 const operators = document.querySelectorAll('.operator');
 
 const solution = document.querySelector('#answer');
 
-const clear = document.querySelector('#erase')
+const clear = document.querySelector('#erase');
 
-const point = document.querySelector('#decimal')
+const point = document.querySelector('#decimal');
+
+const negatives = document.querySelector('#negative');
+
+
 
 let operator = '';
 let num1 = '';
@@ -80,9 +85,6 @@ function populateDisplay() {
 
     operators.forEach(symbol => {
         symbol.addEventListener('click', (event) => {
-
-
-
             if (num1 !== '' && num2 !== '') {
                 display.textContent = '';
                 event.target = operator;
@@ -90,13 +92,9 @@ function populateDisplay() {
                 display.textContent = num1;
                 operator = event.target.textContent;
             }
-            
             else if (num1 !== '') {
                 operator = event.target.textContent;
             }
-
-
-           
         })
     })
 
@@ -117,6 +115,7 @@ function populateDisplay() {
 
 
 
+
     clear.addEventListener('click', (event) => {
         display.textContent = '0';
         event.target.textContent;
@@ -125,16 +124,36 @@ function populateDisplay() {
         operator = '';
     })
 
+
+
+
+
+    negatives.addEventListener('click', (event) => {
+        if (num1 !== "" && !num1.includes("-") && num2 == "") {
+            num1 = "-" + num1;
+            display.textContent = num1;
+        }
+        else if (num1 !== "" && num1.includes("-") && num2 == "") {
+            num1 = num1.replace("-", "");
+            display.textContent = num1;
+        }
+
+        if (num2 !== "" && !num2.includes("-")) {
+            num2 = "-" + num2;
+            display.textContent = num2;
+        }
+        else if (num2 !== "" && num2.includes("-")) {
+            num2 = num2.replace("-", "");
+            display.textContent = num2;
+        }
+    })
+
 }
 
 
 
 
 populateDisplay()
-
-
-
-
 
 
 

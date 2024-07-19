@@ -46,7 +46,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-content: center;
-    width: 430px;
+    width: 440px;
     height: 700px;
     gap: 20px;
     background-color: #023047;
